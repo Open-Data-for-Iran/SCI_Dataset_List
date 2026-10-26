@@ -1,0 +1,17 @@
+# Python environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Build output
+build/
+dist/
+*.egg-info/
+
+# Marimo session state
+__marimo__/
+
+# Draft
+draft.py

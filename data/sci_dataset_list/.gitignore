@@ -1,0 +1,8 @@
+dataset_pages
+page_metadata
+rss_catalog.csv
+rss.xml
+
+# Keep the published metadata tables in version control.
+!datasets.csv
+!references.csv

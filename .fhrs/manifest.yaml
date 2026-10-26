@@ -1,0 +1,66 @@
+fhrs_version: '0.1'
+name: sci_dataset_list
+title: SCI Dataset List
+schema_version: 0.1.0
+release: '1405-08-05'
+status: in_development
+storages:
+  embedded:
+    type: embedded
+    path: ../data/sci_dataset_list
+resources:
+  rss:
+    type: file
+    locations: []
+    suffix: .xml
+    title: SCI RSS export
+    description: Original dataset listings published by SCI.
+  rss_catalog:
+    type: file
+    locations: []
+    suffix: .csv
+    title: RSS catalog
+    description: Dataset entries extracted from the SCI RSS export.
+  dataset_pages:
+    type: directory
+    locations: []
+    title: Dataset pages
+    description: Saved SCI landing pages used for metadata extraction.
+  page_metadata:
+    type: directory
+    locations: []
+    title: Page metadata
+    description: Parsed dataset metadata and references from each landing page.
+  datasets:
+    type: file
+    locations:
+    - storage: embedded
+      uri: datasets.csv
+    suffix: .csv
+    title: Datasets
+    description: One row per SCI dataset, including website references.
+  references:
+    type: file
+    locations:
+    - storage: embedded
+      uri: references.csv
+    suffix: .csv
+    title: References
+    description: File downloads and page links advertised by each dataset.
+tables:
+  rss_catalog:
+    resource: rss_catalog
+    reader: csv
+    title: RSS catalog
+    description: Dataset entries extracted from the SCI RSS export.
+  datasets:
+    resource: datasets
+    reader: csv
+    title: Datasets
+    description: One row per SCI dataset, including website references.
+  references:
+    resource: references
+    reader: csv
+    title: References
+    description: File downloads and page links advertised by each dataset.
+collections: {}

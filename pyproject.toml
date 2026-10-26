@@ -1,0 +1,29 @@
+[project]
+name = "sci-dataset-list"
+version = "0.1.0"
+description = "Catalog SCI datasets and their references from RSS listings and landing-page metadata."
+readme = "README.md"
+authors = [
+    { name = "Mohammad Amin Alavian", email = "m.amin.alavian@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "fhrs-py",
+    "jdatetime>=6.1.1",
+    "lxml>=6.1.3",
+    "pandas>=3.0.6",
+    "requests>=2.34.2",
+    "tenacity>=9.2.1",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.14"]
+marimo = ["marimo>=0.25.1"]
+
+[tool.uv.sources]
+fhrs-py = { git = "https://github.com/Open-Data-for-Iran/FHRS-PY.git", rev = "984ae8b2cef792f1cb4606eb78a07ee84c2f5112" }
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
